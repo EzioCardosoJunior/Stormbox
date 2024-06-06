@@ -1,6 +1,6 @@
 <mat-sidenav-container class="example-container" autosize>
   <mat-sidenav #sidenav [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
-    <app-sidebar></app-sidebar>
+    <app-sidebar class="strm-sidebar"></app-sidebar>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-header (toggleSidenav)="sidenav.toggle()"></app-header>

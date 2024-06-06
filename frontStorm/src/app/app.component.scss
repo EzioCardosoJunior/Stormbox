@@ -6,4 +6,14 @@
   .content {
     padding: 20px;
   }
+
+  
+
+$strm-sidebar-background: #1e01c2;
+$strm-sidebar-color: #ffffff;
+
+.strm-sidebar {
+  background: $strm-sidebar-background;
+  color: $strm-sidebar-color;
+}
   
