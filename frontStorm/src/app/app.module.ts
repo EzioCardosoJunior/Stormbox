@@ -13,7 +13,10 @@ import { HeaderComponent } from './template/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './template/home/home.component';
 import { CadastroManualComponent } from './template/cadastro-manual/cadastro-manual.component';
-import { GestaoUcsComponent } from './template/gestao-ucs/gestao-ucs.component'; // Importação do AppRoutingModule
+import { GestaoUcsComponent } from './template/gestao-ucs/gestao-ucs.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { GestaoUcsComponent } from './template/gestao-ucs/gestao-ucs.component';
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule // Adição do AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    MatGridListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

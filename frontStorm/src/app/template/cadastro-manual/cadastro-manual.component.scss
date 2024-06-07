@@ -1,0 +1,17 @@
+.content {
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.styled-button {
+    width: 231px;
+    height: 47px;
+    border-radius: 4px;
+    background-color: #6691e7;
+    color: white;
+  }
