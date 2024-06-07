@@ -1,0 +1,29 @@
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5; /* Cor de fundo opcional */
+  }
+  
+  .welcome-content {
+    text-align: center;
+    width: 50%;
+    background-color: white; /* Cor de fundo opcional */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+    border-radius: 8px; /* Borda arredondada opcional */
+  }
+  
+  @media (max-width: 768px) {
+    .welcome-content {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .welcome-content {
+      width: 90%;
+    }
+  }
+  

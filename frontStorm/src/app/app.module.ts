@@ -11,14 +11,18 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { HeaderComponent } from './template/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './template/home/home.component'; // Importação do AppRoutingModule
+import { HomeComponent } from './template/home/home.component';
+import { CadastroManualComponent } from './template/cadastro-manual/cadastro-manual.component';
+import { GestaoUcsComponent } from './template/gestao-ucs/gestao-ucs.component'; // Importação do AppRoutingModule
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    CadastroManualComponent,
+    GestaoUcsComponent
   ],
   imports: [
     BrowserModule,

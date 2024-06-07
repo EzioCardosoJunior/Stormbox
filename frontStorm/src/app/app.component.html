@@ -4,15 +4,8 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <app-header (toggleSidenav)="sidenav.toggle()"></app-header>
-    <div class="content">
-      <div class="button-container">
-        <button class="styled-button">Cadastro Manual</button>
-        <button class="styled-button">Importação planilha</button>
-        </div>
-        <div class="link-container">
-          <a href="#">Download modelo de planilha</a>
-          </div>
+    
         <router-outlet></router-outlet>
-    </div>
+   
   </mat-sidenav-content>
 </mat-sidenav-container>
