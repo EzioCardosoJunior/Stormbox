@@ -10,13 +10,15 @@ import { MatListModule } from '@angular/material/list';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './template/sidebar/sidebar.component';
 import { HeaderComponent } from './template/header/header.component';
-import { AppRoutingModule } from './app-routing.module'; // Importação do AppRoutingModule
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './template/home/home.component'; // Importação do AppRoutingModule
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
