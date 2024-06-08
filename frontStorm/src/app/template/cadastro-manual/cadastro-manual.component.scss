@@ -31,3 +31,13 @@
     display: flex;
     gap: 16px;
 }
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    /* Espaçamento entre o label e o campo de entrada */
+    font-size: 16px;
+    /* Tamanho da fonte do label */
+    font-weight: 500;
+    /* Peso da fonte do label */
+}
