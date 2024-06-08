@@ -23,7 +23,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
-
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { BreadcrumbService } from './services/breadcrumb.service';
 export const MY_FORMATS = {
   parse: {
     dateInput: 'DD/MM/YYYY',
@@ -43,7 +44,8 @@ export const MY_FORMATS = {
     HeaderComponent,
     HomeComponent,
     CadastroManualComponent,
-    GestaoUcsComponent
+    GestaoUcsComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,7 @@ export const MY_FORMATS = {
     ReactiveFormsModule
   ],
   providers: [
+    BreadcrumbService,
     { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS] },
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
