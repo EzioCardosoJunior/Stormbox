@@ -1,113 +1,149 @@
 <div class="content">
     <div class="button-container">
-        <div class="align-start">Cadastro de nova UC</div>
-        <button class="styled-button" routerLink="/home">Cancelar</button>
-        <button class="styled-button">Cadastrar UC</button>
+      <div class="align-start">Cadastro de nova UC</div>
+      <button class="styled-button-cancel" routerLink="/home">Cancelar</button>
+      <button class="styled-button" (click)="saveFormData()">Cadastrar UC</button>
     </div>
-
+  
     <form [formGroup]="form">
-        <!-- Primeira linha -->
+      <!-- Primeira linha -->
+      <div>
+        <label for="vigencia-inicial">Vigência Inicial</label>
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="picker" formControlName="vigenciaInicial" id="vigencia-inicial">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+  
+      <!-- Segunda linha -->
+      <div class="row">
         <div>
-            <label for="vigencia-inicial">Vigência Inicial</label>
+          <label for="concessionaria">Concessionária</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Campo 1</mat-label>
+            <input matInput formControlName="concessionaria">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <label for="uf">UF</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Campo 2</mat-label>
+            <input matInput formControlName="uf">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <label for="unidadeInstalacao">N° unidade/Instalação</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Insira número</mat-label>
+            <input matInput formControlName="unidadeInstalacao">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <label for="numeroCliente">N° cliente</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Insira número</mat-label>
+            <input matInput formControlName="numeroCliente">
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <!-- Terceira linha -->
+      <div class="row">
+        <div>
+          <label for="empresa">Empresa</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Insira nome</mat-label>
+            <input matInput formControlName="empresa">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <label for="descricaoUnidade">Descrição da unidade *</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Insira descrição</mat-label>
+            <input matInput formControlName="descricaoUnidade">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <label for="tipo">Tipo *</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Campo 7</mat-label>
+            <input matInput formControlName="tipo">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <label for="modalidade">Modalidade</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Campo 8</mat-label>
+            <input matInput formControlName="modalidade">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <label for="clienteRural">É cliente rural? *</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Campo 9</mat-label>
+            <input matInput formControlName="clienteRural">
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <!-- Quarta linha -->
+      <div class="row">
+        <div>
+          <label for="tipoOrganizacao">Tipo de organização</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Campo 10</mat-label>
+            <input matInput formControlName="tipoOrganizacao">
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <label for="tipoLigacao">Tipo de ligação</label>
+          <mat-form-field appearance="outline">
+            <mat-label>Campo 11</mat-label>
+            <input matInput formControlName="tipoLigacao">
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <br><br><br>
+  
+      <div>
+        <div class="align-start">Dados de login na concessionária</div>
+        <br><br>
+        <div class="row">
+          <div>
+            <label for="cpfCnpj">CPF/CNPJ *</label>
             <mat-form-field appearance="outline">
-                <input matInput [matDatepicker]="picker" formControlName="vigenciaInicial" id="vigencia-inicial">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+              <mat-label>Campo 10</mat-label>
+              <input matInput formControlName="cpfCnpj">
             </mat-form-field>
+          </div>
+  
+          <div>
+            <label for="email">E-mail *</label>
+            <mat-form-field appearance="outline">
+              <mat-label>Campo 11</mat-label>
+              <input matInput formControlName="email">
+            </mat-form-field>
+          </div>
+  
+          <div>
+            <label for="senha">Senha *</label>
+            <mat-form-field appearance="outline">
+              <mat-label>Campo 11</mat-label>
+              <input matInput formControlName="senha">
+            </mat-form-field>
+          </div>
         </div>
-
-
-
-        <!-- Segunda linha -->
-        <div class="row">
-
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 1</mat-label>
-                    <input matInput formControlName="campo1">
-                </mat-form-field>
-            </div>
-
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 2</mat-label>
-                    <input matInput formControlName="campo2">
-                </mat-form-field>
-            </div>
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 3</mat-label>
-                    <input matInput formControlName="campo3">
-                </mat-form-field>
-            </div>
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 4</mat-label>
-                    <input matInput formControlName="campo4">
-                </mat-form-field>
-            </div>
-        </div>
-
-        <!-- Terceira linha -->
-        <div class="row">
-
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 5</mat-label>
-                    <input matInput formControlName="campo5">
-                </mat-form-field>
-            </div>
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 6</mat-label>
-                    <input matInput formControlName="campo6">
-                </mat-form-field>
-            </div>
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 7</mat-label>
-                    <input matInput formControlName="campo7">
-                </mat-form-field>
-            </div>
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 8</mat-label>
-                    <input matInput formControlName="campo8">
-                </mat-form-field>
-            </div>
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 9</mat-label>
-                    <input matInput formControlName="campo9">
-                </mat-form-field>
-            </div>
-        </div>
-
-        <!-- Quarta linha -->
-        <div class="row">
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 10</mat-label>
-                    <input matInput formControlName="campo10">
-                </mat-form-field>
-            </div>
-            <div>
-                <label for="vigencia-inicial">Concessionária</label>
-                <mat-form-field appearance="outline">
-                    <mat-label>Campo 11</mat-label>
-                    <input matInput formControlName="campo11">
-                </mat-form-field>
-            </div>
-        </div>
+      </div>
     </form>
-</div>
+  </div>
+  

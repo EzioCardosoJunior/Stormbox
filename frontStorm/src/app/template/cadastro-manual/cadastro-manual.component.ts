@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DataSTRMService } from './../../services/data-strm.service';
+import { Component, OnInit } from '@angular/core'; // Adicionar OnInit à importação
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -6,26 +7,52 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './cadastro-manual.component.html',
   styleUrls: ['./cadastro-manual.component.scss']
 })
-export class CadastroManualComponent {
+export class CadastroManualComponent implements OnInit { // Implementar OnInit
 
+  form: FormGroup; // Remover operador ?
 
-  form: FormGroup;
-
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private dataSTRMService: DataSTRMService) {
+    // Inicializando o form no construtor
     this.form = this.fb.group({
       vigenciaInicial: [''],
-      campo1: [''],
-      campo2: [''],
-      campo3: [''],
-      campo4: [''],
-      campo5: [''],
-      campo6: [''],
-      campo7: [''],
-      campo8: [''],
-      campo9: [''],
-      campo10: [''],
-      campo11: [''],
-      campo12: ['']
+      concessionaria: [''],
+      uf: [''],
+      unidadeInstalacao: [''],
+      numeroCliente: [''],
+      empresa: [''],
+      descricaoUnidade: [''],
+      tipo: [''],
+      modalidade: [''],
+      clienteRural: [''],
+      tipoOrganizacao: [''],
+      tipoLigacao: [''],
+      cpfCnpj: [''],
+      email: [''],
+      senha: [''],
     });
+  }
+
+  ngOnInit(): void { // Implementar OnInit
+    this.loadFormData();
+  }
+
+  saveFormData(): void {
+    if (this.form.valid) {
+      this.dataSTRMService.saveData(this.form.value);
+    } else {
+      console.log('Form is invalid');
+    }
+  }
+
+  loadFormData(): void {
+    const savedData = this.dataSTRMService.getData();
+    if (savedData) {
+      this.form.patchValue(savedData);
+    }
+  }
+
+  clearFormData(): void {
+    this.dataSTRMService.clearData();
+    this.form.reset();
   }
 }
