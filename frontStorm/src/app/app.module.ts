@@ -20,11 +20,13 @@ import {MatTableModule} from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {MatSelectModule} from '@angular/material/select';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { BreadcrumbService } from './services/breadcrumb.service';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 export const MY_FORMATS = {
   parse: {
     dateInput: 'DD/MM/YYYY',
@@ -55,6 +57,7 @@ export const MY_FORMATS = {
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatSelectModule,
     AppRoutingModule,
     MatCardModule,
     MatGridListModule,
@@ -64,7 +67,8 @@ export const MY_FORMATS = {
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [
     BreadcrumbService,

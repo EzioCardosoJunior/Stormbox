@@ -1,7 +1,7 @@
 <div class="content">
   <div class="button-container">
     <button class="styled-button" routerLink="/cadastroManual">Cadastro Manual</button>
-    <button class="styled-button">Importação planilha</button>
+    <button class="styled-button" (click)="showAlert()">Importação planilha</button>
   </div>
   <div class="link-container">
     <a href="#">Download modelo de planilha</a>
@@ -13,6 +13,7 @@
   <div class="card-container">
     <mat-card class="welcome-card custom-width" *ngFor="let card of cards">
       <mat-card-title>{{ card.title }}</mat-card-title>
+      <div style="border-bottom: 1px solid #ece8e8;"></div>
       <mat-card-content>
         <p>{{ card.content }}</p>
       </mat-card-content>

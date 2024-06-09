@@ -4,7 +4,7 @@ import { BreadcrumbService } from 'src/app/services/breadcrumb.service';
 @Component({
   selector: 'app-breadcrumb',
   templateUrl: './breadcrumb.component.html',
-  styleUrls: ['./breadcrumb.component.css']
+  styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent implements OnInit {
   breadcrumbs: { label: string; url: string; }[] = [];

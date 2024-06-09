@@ -32,6 +32,10 @@
             "styles": [
               "src/styles.scss"
             ],
+            "allowedCommonJsDependencies": [
+              "moment",
+              "sweetalert2"
+            ],
             "scripts": []
           },
           "configurations": {
