@@ -1,16 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { DataSTRMService } from 'src/app/services/data-strm.service';
 
 @Component({
   selector: 'app-gestao-ucs',
   templateUrl: './gestao-ucs.component.html',
   styleUrls: ['./gestao-ucs.component.scss']
 })
-export class GestaoUcsComponent {
+export class GestaoUcsComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = [
+    'unidadeInstalacao',
+    'numeroCliente',
+    'empresa', 
+    'descricaoUnidade',  
+    //'Status'
+  ];
+  
+  dataSource: PeriodicElement[] = [];
   clickedRows = new Set<PeriodicElement>();
+
+  constructor(private dataService: DataSTRMService) { }
+
+  ngOnInit(): void {
+    this.loadDataFromService();
+  }
+
+  loadDataFromService(): void {
+    const data = this.dataService.getData();
+    this.dataSource = data.length ? data : [];
+  }
 
   showAlert() {
     Swal.fire({
@@ -36,16 +55,3 @@ export interface PeriodicElement {
   weight: number;
   symbol: string;
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];
