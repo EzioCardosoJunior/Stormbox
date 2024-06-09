@@ -33,7 +33,6 @@ $strm-sidebar-color: #ffffff;
 .link-container a {
   text-decoration: none;
   color: #1976d2;
-  /* Cor do link */
 }
 
 .styled-button {
@@ -51,7 +50,8 @@ $strm-sidebar-color: #ffffff;
   background-color: #f5f5f5;
 }
 
-.welcome-card {
+.table-card {
+  margin-top: 10px;
   text-align: center;
   width: 100%;
 }
@@ -59,21 +59,18 @@ $strm-sidebar-color: #ffffff;
 @media (max-width: 1200px) {
   mat-grid-list {
     cols: 3;
-    /* 3 colunas para telas menores */
   }
 }
 
 @media (max-width: 768px) {
   mat-grid-list {
     cols: 2;
-    /* 2 colunas para telas ainda menores */
   }
 }
 
 @media (max-width: 480px) {
   mat-grid-list {
     cols: 1;
-    /* 1 coluna para telas bem pequenas */
   }
 }
 
@@ -95,3 +92,29 @@ $strm-sidebar-color: #ffffff;
 .demo-row-is-clicked {
   font-weight: bold;
 }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; 
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; 
+}
+
+.custom-width {
+  flex: 1 1 auto; 
+  min-width: 200px; 
+  max-width: calc(20% - 16px); 
+  margin-bottom: 16px; 
+}
+
+@media (max-width: 768px) {
+  .custom-width {
+    max-width: calc(30% - 16px); 
+  }
+}
+

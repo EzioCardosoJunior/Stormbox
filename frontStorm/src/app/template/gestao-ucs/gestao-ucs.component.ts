@@ -12,11 +12,11 @@ export class GestaoUcsComponent {
   clickedRows = new Set<PeriodicElement>();
 
   cards = [
-    { title: 'Seja Bem-Vindo 1', content: 'Conteúdo do card 1' },
-    { title: 'Seja Bem-Vindo 2', content: 'Conteúdo do card 2' },
-    { title: 'Seja Bem-Vindo 3', content: 'Conteúdo do card 3' },
-    { title: 'Seja Bem-Vindo 4', content: 'Conteúdo do card 4' },
-    { title: 'Seja Bem-Vindo 5', content: 'Conteúdo do card 5' },
+    { title: 'Card 1', content: 'Content for Card 1' },
+  { title: 'Card 2', content: 'Content for Card 2' },
+  { title: 'Card 3', content: 'Content for Card 3' },
+  { title: 'Card 4', content: 'Content for Card 4' },
+  { title: 'Card 5', content: 'Content for Card 5' }
   ];
 }
 

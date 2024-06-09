@@ -10,19 +10,20 @@
 
 
 
-  <mat-grid-list cols="5" rowHeight="1:1" gutterSize="16px">
-    <mat-grid-tile *ngFor="let card of cards">
-      <mat-card class="welcome-card">
-        <mat-card-title>{{ card.title }}</mat-card-title>
-        <mat-card-content>
-          <p>{{ card.content }}</p>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="card-container">
+    <mat-card class="welcome-card custom-width" *ngFor="let card of cards">
+      <mat-card-title>{{ card.title }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ card.content }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  
+  
 
 
-<mat-card class="welcome-card">
+<mat-card class="table-card">
   <table mat-table [dataSource]="dataSource" >
     <!-- Position Column -->
     <ng-container matColumnDef="position">
