@@ -10,6 +10,7 @@ import { DataSTRMService } from 'src/app/services/data-strm.service';
 export class GestaoUcsComponent implements OnInit {
 
   displayedColumns: string[] = [
+    'id',
     'unidadeInstalacao',
     'numeroCliente',
     'empresa', 
@@ -17,8 +18,8 @@ export class GestaoUcsComponent implements OnInit {
     //'Status'
   ];
   
-  dataSource: PeriodicElement[] = [];
-  clickedRows = new Set<PeriodicElement>();
+  dataSource: any;
+  clickedRows = new Set<any>();
 
   constructor(private dataService: DataSTRMService) { }
 
@@ -41,17 +42,10 @@ export class GestaoUcsComponent implements OnInit {
   }
 
   cards = [
-    { title: 'Card 1', content: 'Content for Card 1' },
-    { title: 'Card 2', content: 'Content for Card 2' },
-    { title: 'Card 3', content: 'Content for Card 3' },
-    { title: 'Card 4', content: 'Content for Card 4' },
-    { title: 'Card 5', content: 'Content for Card 5' }
+    { title: 'Total UCs', content: ' 1' },
+    { title: 'Status', content: ' 2' },
+    { title: 'Tipo', content: ' 3' },
+    { title: 'Grupo', content: ' 4' },
+    { title: 'Dados de Faturamento', content: ' 5' }
   ];
-}
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
 }

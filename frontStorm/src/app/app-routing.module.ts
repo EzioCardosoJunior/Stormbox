@@ -7,8 +7,8 @@ import { GestaoUcsComponent } from './template/gestao-ucs/gestao-ucs.component';
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: 'home', component: HomeComponent, data: { breadcrumb: 'Home' } },
-  { path: 'cadastroManual', component: CadastroManualComponent, data: { breadcrumb: 'Cadastro Manual' } },
-  { path: 'gestaoUcs', component: GestaoUcsComponent, data: { breadcrumb: 'Gestão UCs' } },
+  { path: 'cadastroManual', component: CadastroManualComponent, data: { breadcrumb: 'Gestão > Cadastro Manual' } },
+  { path: 'gestaoUcs', component: GestaoUcsComponent, data: { breadcrumb: 'Gestão > Gestão de UCs' } },
 ];
 
 

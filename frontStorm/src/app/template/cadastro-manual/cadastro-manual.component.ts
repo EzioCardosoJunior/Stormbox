@@ -1,66 +1,4 @@
 import { DataSTRMService } from './../../services/data-strm.service';
-import { Component, OnInit } from '@angular/core'; // Adicionar OnInit à importação
-import { FormBuilder, FormGroup } from '@angular/forms';
-
-@Component({
-  selector: 'app-cadastro-manual',
-  templateUrl: './cadastro-manual.component.html',
-  styleUrls: ['./cadastro-manual.component.scss']
-})
-export class CadastroManualComponent implements OnInit { // Implementar OnInit
-
-  form: FormGroup; // Remover operador ?
-
-  constructor(private fb: FormBuilder, private dataSTRMService: DataSTRMService) {
-    // Inicializando o form no construtor
-    this.form = this.fb.group({
-      vigenciaInicial: [''],
-      concessionaria: [''],
-      uf: [''],
-      unidadeInstalacao: [''],
-      numeroCliente: [''],
-      empresa: [''],
-      descricaoUnidade: [''],
-      tipo: [''],
-      modalidade: [''],
-      clienteRural: [''],
-      tipoOrganizacao: [''],
-      tipoLigacao: [''],
-      cpfCnpj: [''],
-      email: [''],
-      senha: [''],
-    });
-  }
-
-  ngOnInit(): void { // Implementar OnInit
-    this.loadFormData();
-  }
-
-  saveFormData(): void {
-    if (this.form.valid) {
-      this.dataSTRMService.saveData(this.form.value);
-    } else {
-      console.log('Form is invalid');
-    }
-  }
-
-  loadFormData(): void {
-    const savedData = this.dataSTRMService.getData();
-    if (savedData) {
-      this.form.patchValue(savedData);
-    }
-  }
-
-  clearFormData(): void {
-    this.dataSTRMService.clearData();
-    this.form.reset();
-  }
-}
-
-
-
-
-/* import { DataSTRMService } from './../../services/data-strm.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -72,6 +10,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CadastroManualComponent implements OnInit {
 
   form: FormGroup;
+  cpfCnpjMask: string = '000.000.000-009999';
+
 
   constructor(private fb: FormBuilder, private dataSTRMService: DataSTRMService) {
     this.form = this.fb.group({
@@ -116,5 +56,14 @@ export class CadastroManualComponent implements OnInit {
     this.dataSTRMService.clearData();
     this.form.reset();
   }
+  
+  updateMask() {
+    const value = this.form.get('cpfCnpj')?.value.replace(/\D/g, '');
+
+    if (value.length > 11) {
+      this.cpfCnpjMask = '00.000.000/0000-00';
+    } else {
+      this.cpfCnpjMask = '000.000.000-00';
+    }
+  }
 }
- */

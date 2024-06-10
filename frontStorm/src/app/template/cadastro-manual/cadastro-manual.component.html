@@ -6,7 +6,6 @@
   </div>
 
   <form [formGroup]="form">
-    <!-- Primeira linha -->
     <div>
       <label for="vigencia-inicial">Vigência Inicial</label>
       <mat-form-field appearance="outline">
@@ -15,8 +14,6 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
-
-    <!-- Segunda linha -->
     <div class="row">
       <div>
         <label for="concessionaria">Concessionária</label>
@@ -106,7 +103,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      
+
 
       <div>
         <label for="unidadeInstalacao">N° unidade/Instalação</label>
@@ -125,7 +122,6 @@
       </div>
     </div>
 
-    <!-- Terceira linha -->
     <div class="row">
       <div>
         <label for="empresa">Empresa</label>
@@ -149,7 +145,7 @@
           <mat-label>Campo 7</mat-label>
           <mat-select formControlName="tipo">
             <mat-option value="option">Consumidor</mat-option>
-            <mat-option value="option">Geradora                       </mat-option>
+            <mat-option value="option">Geradora </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -174,7 +170,7 @@
           </mat-select>
         </mat-form-field>
       </div>
-      
+
 
       <div>
         <label for="clienteRural">É cliente rural? *</label>
@@ -188,7 +184,6 @@
       </div>
     </div>
 
-    <!-- Quarta linha -->
     <div class="row">
       <div>
         <label for="tipoOrganizacao">Tipo de organização</label>
@@ -225,8 +220,8 @@
         <div>
           <label for="cpfCnpj">CPF/CNPJ *</label>
           <mat-form-field appearance="outline">
-            <mat-label>Campo 10</mat-label>
-            <input matInput formControlName="cpfCnpj">
+            <input matInput [mask]="cpfCnpjMask" (input)="updateMask()" placeholder="Digite o CPF ou CNPJ"
+              formControlName="cpfCnpj">
           </mat-form-field>
         </div>
 
@@ -234,7 +229,7 @@
           <label for="email">E-mail *</label>
           <mat-form-field appearance="outline">
             <mat-label>Campo 11</mat-label>
-            <input matInput formControlName="email">
+            <input type="email" matInput formControlName="email">
           </mat-form-field>
         </div>
 
