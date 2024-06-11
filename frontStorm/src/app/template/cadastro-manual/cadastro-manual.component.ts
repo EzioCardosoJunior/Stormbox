@@ -28,7 +28,7 @@ export class CadastroManualComponent implements OnInit {
       tipoOrganizacao: ['', Validators.required],
       tipoLigacao: ['', Validators.required],
       cpfCnpj: ['', [Validators.required, Validators.pattern(/^\d{11}|\d{14}$/)]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.pattern(/^\d{11}|\d{14}$/)]],
       senha: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
